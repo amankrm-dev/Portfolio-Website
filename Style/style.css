@@ -274,9 +274,25 @@ h2 {
 
 .intro-image img {
     height: 450px;
-    width: 350px;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 450px; /* Ensure the width matches the height for a perfect circle */
+    border-radius: 50%; /* Make the image fully rounded */
+    object-fit: cover; /* Ensure the image fits within the circle */
+    border: 5px solid rgba(255, 255, 255, 0.2); /* Optional: Add a border for better styling */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Initial glow */
+    animation: glowPulse 3s infinite ease-in-out; /* Add glow animation */
+}
+
+/* Keyframes for glowing pulse effect */
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(255, 255, 255, 0.7), 0 0 50px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.4);
+    }
 }
 
 .intro:hover {
@@ -346,10 +362,17 @@ h2 {
 .profile-picture img {
     width: 350px;
     height: 350px;
-    border-radius: 50%;
-    border: 5px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 10px dodgerblue, 0 0 20px dodgerblue, 0 0 30px dodgerblue;
-    animation: glowEffect 1.5s infinite;
+    border-radius: 50%; /* Fully rounded */
+    object-fit: cover; /* Ensure the image fits within the circle */
+    border: none; /* Remove the box border */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Initial glow */
+    animation: glowPulse 3s infinite ease-in-out; /* Add glow animation */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.profile-picture img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.7), 0 0 50px rgba(255, 255, 255, 0.6); /* Enhanced glow on hover */
 }
 
 /* Content Section */
