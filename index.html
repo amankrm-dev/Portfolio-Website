@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aman Kumar's Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+    </style>
+    <link rel="stylesheet" href="Style/style.css" />
+    <link rel="shortcut icon" href="Assets/Images/favicon.png" type="image/x-icon">
+    <script src="Script/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav_left">
+                <h2>A </h2>
+                <h1>K</h1>
+                <h2>M</h2>
+            </div>
+
+            <!-- Add hamburger menu -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav_right" id="mobileMenu">
+                <ul id="navLinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#awards">Awards And Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="landing-page">
+            <div class="intro">
+                <h1>Hi, I'm <span style="color: #dfdfdf;">Aman Kumar Mandal</span> <span class="wave">👋</span></h1>
+                <h2>I'm a <span style="color: #f9f9f9;" id="typing-effect"></span></h2>
+                <p>Welcome to my portfolio, Explore my work and feel free to connect!</p>
+            </div>
+            <div class="intro-image">
+                <img src="Assets/Images/aman.png" alt="Aman Kumar">
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="flip-container profile-picture">
+                <div class="flipper">
+                    <img src="Assets/Images/aman.png" alt="Profile Picture" />
+                </div>
+            </div>
+            <div class="about-content">
+                <h2>Introduction</h2>
+                <h1>Overview.</h1>
+                <ul>
+                    <li>👨‍🎓 I'm a BCA student with a strong passion for coding, design, and building real-world tech
+                        solutions.</li>
+                    <li>💻 I love working with Java and Python, and I enjoy developing responsive, user-friendly
+                        websites using HTML, CSS, and JavaScript.</li>
+                    <li>🎨 UI/UX design excites me — I focus on creating clean, intuitive interfaces that enhance user
+                        experience.</li>
+                    <li>📚 I’m actively improving my problem-solving skills through data structures and algorithms, and
+                        I'm always up for a new coding challenge.</li>
+                    <li>🚀 Curious and self-driven, I'm constantly learning, experimenting with new technologies, and
+                        building projects that push my limits.</li>
+                </ul>
+                <div class="about-buttons">
+                    <a href="https://www.figma.com/design/iesQyjpZ7celhZTAhLeUti/Class-Materials---HSMSS--Community-?node-id=57-8&t=XWYC4r6brSag7dL1-1"
+                        class="btn resume-btn" target="_blank">Resume</a>
+                    <a href="https://www.linkedin.com/in/aman-kr-mandal-8855922a9/" class="btn linkedin-btn"
+                        target="_blank">LinkedIn</a>
+                    <a href="https://github.com/amankrm-dev" class="btn github-btn" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-projects-container">
+            <!-- Experience Section -->
+            <div class="experience-container" id="experience">
+                <h2>Experience</h2>
+                <div class="experience-frame">
+                    <div class="experience-item">
+                        <h3>Content Researcher</h3>
+                        <p><strong>Company:</strong> Exam Masters Nepal</p>
+                        <p><strong>Duration:</strong> 2081 (Baishak-Ashad)</p>
+                        <p><strong>Responsibilities:</strong> "Responsible for sourcing, editing, organizing, and
+                            managing educational content across various formats and platforms, ensuring accuracy,
+                            relevance, and accessibility for target audiences."</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>XXXXXX NONE XXXXXXX</h3>
+                        <p><strong>Company:</strong>XXXXX</p>
+                        <p><strong>Duration:</strong> XXXXX</p>
+                        <p><strong>Responsibilities:</strong> XXXXX.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="projects-gallery-section" id="projects">
+                <div class="projects-container">
+                    <h2 class="projects-heading">Projects</h2>
+                    <div class="projects-gallery">
+                        <div class="project-item">
+                            <img src="Assets/Images/password-generator.jpg" alt="Project Image 1">
+                            <div class="hover-text">
+                                <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%205/Password%20Generator%20Project/task.py"
+                                    target="_blank">PasswordGenerator(Pyhton)</a>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <img src="Assets/Images/higher-lower.png" alt="Project Image 2">
+                            <div class="hover-text">
+                                <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2014/Higher%20or%20Lower%20Project/main.py"
+                                    target="_blank">HigherLowerGame(Pyhton)</a>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <img src="Assets/Images/hangman.png" alt="Project Image 3">
+                            <div class="hover-text">
+                                <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%207/task/main.py"
+                                    target="_blank">HangmanGame(Pyhton)</a>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <img src="Assets/Images/netflix.jpg" alt="Project Image 4">
+                            <div class="hover-text">
+                                <a href="https://github.com/amankrm-dev/Netfilx-Clone" target="_blank">Netflix Clone</a>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <img src="Assets/Images/coffeeMachine.jpg" alt="Project Image 5">
+                            <div class="hover-text">
+                                <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2015/Coffee%20Machine%20Project/main.py"
+                                    target="_blank">CoffeeMachineProject(Python)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards and Certifications Section -->
+        <section id="awards">
+            <h2>Awards and Certifications</h2>
+            <div class="certificates-gallery">
+                <div class="certificate-item">
+                    <img src="Assets/Images/techfuse.png" alt="Certificate 1">
+                </div>
+                <div class="certificate-item">
+                    <img src="Assets/Images/SoloLearn sql.jpg" alt="Certificate 2">
+                </div>
+                <div class="certificate-item">
+                    <img src="Assets/Images/design-thinking.png" alt="Certificate 3">
+                </div>
+                <div class="certificate-item">
+                    <img src="Assets/Images/tri-biz.png" alt="Certificate 4">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>You can reach me at</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#awards">Awards And Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-connect">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/aman-kr-mandal-8855922a9/" target="_blank">LinkedIn</a>
+                    </li>
+                    <li><a href="https://github.com/amankrm-dev" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><a href="mailto:shoorveer681@gmail.com">Email Me</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aman Kumar Mandal | All rights reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>
