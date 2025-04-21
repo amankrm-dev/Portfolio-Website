@@ -183,3 +183,25 @@ window.addEventListener('scroll', () => {
 backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const aboutSection = document.querySelector("#about");
+    const profilePicture = document.querySelector(".profile-picture img");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Add the 3D rotation animation when the section is in view
+                    profilePicture.style.animation = "rotate3D 1s ease-in-out";
+                    profilePicture.addEventListener("animationend", () => {
+                        profilePicture.style.animation = ""; // Reset animation
+                    });
+                }
+            });
+        },
+        { threshold: 0.5 } // Trigger when 50% of the section is visible
+    );
+
+    observer.observe(aboutSection);
+});
