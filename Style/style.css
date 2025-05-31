@@ -787,97 +787,55 @@ body.menu-open {
 
 /* Remove old projects gallery styles */
 .projects-gallery {
-    padding: 2% 0;
-    width: 100%;
-    height: 250px;
     display: flex;
-    flex-direction: row;
-    gap: 15px;
-    color: white;
-    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping of project items */
+    justify-content: center; /* Center-align the project items */
+    gap: 16px; /* Add spacing between project items */
+    padding: 20px 0;
+    overflow: hidden; /* Prevent horizontal scrolling */
 }
 
 .project-item {
-    position: relative;
-    width: 80px;
-    /* Reduced initial width */
-    height: 100%;
-    overflow: hidden;
+    width: 150px; /* Reduce the size of project items for smaller screens */
+    height: 200px;
     border-radius: 10px;
-    transition: width 0.3s ease;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Remove duplicate container styles */
-.experience-projects-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 20px;
-    background: #fff;
-    color: #222;
-    align-items: start;
+.project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.projects-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+/* Hover effect for project items */
+.project-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-    .experience-projects-container {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding: 15px;
-    }
-
-    .experience-container,
-    .projects-gallery-section {
-        width: 100%;
-    }
-
-    .experience-frame {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
     .projects-gallery {
-        height: 200px;
+        gap: 12px; /* Reduce spacing between project items */
         padding: 10px 0;
-        margin: 0 auto;
-        width: 100%;
     }
 
     .project-item {
-        width: 100%;
-    }
-
-    .project-item:hover {
-        width: 250px;
+        width: 120px; /* Further reduce the size of project items */
+        height: 160px;
     }
 }
 
 @media (max-width: 480px) {
-    .experience-projects-container {
-        padding: 10px;
-    }
-
     .projects-gallery {
-        height: 180px;
+        gap: 8px; /* Minimal spacing for very small screens */
     }
 
     .project-item {
-        width: 50px;
-    }
-
-    .project-item:hover {
-        width: 200px;
-    }
-
-    .experience-frame {
-        padding: 1rem;
+        width: 100px; /* Adjust size for mobile devices */
+        height: 140px;
     }
 }
 
