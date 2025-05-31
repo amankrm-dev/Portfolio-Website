@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Aman Kumar's Portfolio</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
@@ -36,7 +36,7 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#awards">Awards And Certifications</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#footer-section">Contact</a></li> 
                 </ul>
             </div>
         </nav>
@@ -45,22 +45,23 @@
     <main>
         <section id="landing-page">
             <div class="intro">
-                <h1>Hi, I'm <span style="color: #dfdfdf;">Aman Kumar Mandal</span> <span class="wave">👋</span></h1>
+                <h1>Hi, I'm <span style="color: #222;">Aman Kumar Mandal</span> <span class="wave">👋</span></h1>
                 <h2>I'm a <span style="color: #f9f9f9;" id="typing-effect"></span></h2>
                 <p>Welcome to my portfolio, Explore my work and feel free to connect!</p>
             </div>
-            <div class="intro-image">
-                <img src="Assets/Images/aman.jpg" alt="Aman Kumar">
+            <div class="intro-video">
+                <video autoplay loop muted playsinline>
+                    <source src="Assets/Videos/IntroMainVIDEO.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </section>
 
         <section id="about">
-            <div class="profile-picture">
-                <img src="Assets/Images/aman1.jpg" alt="Profile Picture">
+            <div class="about-image">
+                <img src="Assets/Images/aboutme.png" alt="About Me Illustration">
             </div>
             <div class="about-content">
-                <h2>Introduction</h2>
-                <h1>Overview.</h1>
                 <ul>
                     <li>👨‍🎓 I'm a BCA student with a strong passion for coding, design, and building real-world tech
                         solutions.</li>
@@ -68,142 +69,195 @@
                         websites using HTML, CSS, and JavaScript.</li>
                     <li>🎨 UI/UX design excites me — I focus on creating clean, intuitive interfaces that enhance user
                         experience.</li>
-                    <li>📚 I’m actively improving my problem-solving skills through data structures and algorithms, and
+                    <li>📚 I'm actively improving my problem-solving skills through data structures and algorithms, and
                         I'm always up for a new coding challenge.</li>
                     <li>🚀 Curious and self-driven, I'm constantly learning, experimenting with new technologies, and
                         building projects that push my limits.</li>
                 </ul>
-                <div class="about-buttons">
-                    <a href="https://www.figma.com/proto/iesQyjpZ7celhZTAhLeUti/Resme--Aman-Kr.-?node-id=57-9&p=f&t=QbFeFERKTaboUcid-1&scaling=min-zoom&content-scaling=fixed&page-id=57%3A8&starting-point-node-id=57%3A9"
-                        class="btn resume-btn" target="_blank">Resume</a>
-                    <a href="https://www.linkedin.com/in/aman-kr-mandal-8855922a9/" class="btn linkedin-btn"
-                        target="_blank">LinkedIn</a>
-                    <a href="https://github.com/amankrm-dev" class="btn github-btn" target="_blank">GitHub</a>
-                </div>
             </div>
         </section>
 
-        <section class="experience-projects-container">
-            <!-- Experience Section -->
-            <div class="experience-container" id="experience">
-                <h2>Experience</h2>
-                <div class="experience-frame">
+        <!-- Journey Section -->
+        <section id="journey">
+            <div class="journey-container">
+                <h2>Here's a quick look at my journey</h2>
+                <a href="https://www.figma.com/proto/iesQyjpZ7celhZTAhLeUti/Resme--Aman-Kr.-?node-id=57-9&p=f&t=6Rc1xcDEMggh0OxL-1&scaling=min-zoom&content-scaling=fixed&page-id=57%3A8" class="resume-button" target="_blank">View Resume</a>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <div class="experience-container" id="experience">
+            <div class="experience-frame">
+                <div class="experience-content">
+                    <h2>Experience</h2>
                     <div class="experience-item">
                         <h3>Content Researcher</h3>
                         <p><strong>Company:</strong> Exam Masters Nepal</p>
                         <p><strong>Duration:</strong> 2081 (Baishak-Ashad)</p>
-                        <p><strong>Responsibilities:</strong> "Responsible for sourcing, editing, organizing, and
-                            managing educational content across various formats and platforms, ensuring accuracy,
-                            relevance, and accessibility for target audiences."</p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>XXXXXX NONE XXXXXXX</h3>
-                        <p><strong>Company:</strong>XXXXX</p>
-                        <p><strong>Duration:</strong> XXXXX</p>
-                        <p><strong>Responsibilities:</strong> XXXXX.</p>
+                        <p><strong>Responsibilities:</strong> Responsible for sourcing, editing, organizing, and managing educational content across various formats and platforms, ensuring accuracy, relevance, and accessibility for target audiences.</p>
                     </div>
                 </div>
+                <div class="experience-image">
+                    <img src="Assets/Images/experience.png" alt="Experience Illustration">
+                </div>
             </div>
+        </div>
 
-            <!-- Projects Section -->
-            <div class="projects-gallery-section" id="projects">
-                <div class="projects-container">
-                    <h2 class="projects-heading">Projects</h2>
-                    <div class="projects-gallery">
-                        <div class="project-item">
-                            <img src="Assets/Images/password-generator.jpg" alt="Project Image 1">
-                            <div class="hover-text">
-                                <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%205/Password%20Generator%20Project/task.py"
-                                    target="_blank">PasswordGenerator(Pyhton)</a>
+        <!-- Projects Section -->
+        <div class="projects-gallery-section" id="projects">
+            <div class="projects-container">
+                <h2>Projects</h2>
+                <div class="projects-slider">
+                    <div class="project-cards">
+                    
+                        <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%205/Password%20Generator%20Project/task.py" class="project-card" target="_blank">
+                            <img src="Assets/Images/password-generator.jpg" alt="Password Generator">
+                            <div class="project-info">
+                                <h3>Password Generator</h3>
+                                <p>Python-based secure password generator</p>
                             </div>
-                        </div>
-                        <div class="project-item">
-                            <img src="Assets/Images/higher-lower.png" alt="Project Image 2">
-                            <div class="hover-text">
-                                <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2014/Higher%20or%20Lower%20Project/main.py"
-                                    target="_blank">HigherLowerGame(Pyhton)</a>
+                        </a>
+                        <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2014/Higher%20or%20Lower%20Project/main.py" class="project-card" target="_blank">
+                            <img src="Assets/Images/higher-lower.png" alt="Higher Lower Game">
+                            <div class="project-info">
+                                <h3>Higher Lower Game</h3>
+                                <p>Interactive number guessing game</p>
                             </div>
-                        </div>
-                        <div class="project-item">
-                            <img src="Assets/Images/hangman.png" alt="Project Image 3">
-                            <div class="hover-text">
-                                <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%207/task/main.py"
-                                    target="_blank">HangmanGame(Pyhton)</a>
+                        </a>
+                        <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%207/task/main.py" class="project-card" target="_blank">
+                            <img src="Assets/Images/hangman.png" alt="Hangman Game">
+                            <div class="project-info">
+                                <h3>Hangman Game</h3>
+                                <p>Classic word guessing game</p>
                             </div>
-                        </div>
-                        <div class="project-item">
-                            <img src="Assets/Images/netflix.jpg" alt="Project Image 4">
-                            <div class="hover-text">
-                                <a href="https://amankrm-dev.github.io/NClone/" target="_blank">Netflix Clone</a>
+                        </a>
+                        <a href="https://github.com/amankrm-dev/NClone?tab=readme-ov-file" class="project-card" target="_blank">
+                            <img src="Assets/Images/netflix.jpg" alt="Netflix Clone">
+                            <div class="project-info">
+                                <h3>Netflix Clone</h3>
+                                <p>Streaming platform UI clone</p>
                             </div>
-                        </div>
-                        <div class="project-item">
-                            <img src="Assets/Images/coffeeMachine.jpg" alt="Project Image 5">
-                            <div class="hover-text">
-                                <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2015/Coffee%20Machine%20Project/main.py"
-                                    target="_blank">CoffeeMachineProject(Python)</a>
+                        </a>
+                        <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2015/Coffee%20Machine%20Project/main.py" class="project-card" target="_blank">
+                            <img src="Assets/Images/coffeeMachine.jpg" alt="Coffee Machine">
+                            <div class="project-info">
+                                <h3>Coffee Machine</h3>
+                                <p>Python-based coffee vending simulation</p>
                             </div>
-                        </div>
+                        </a>
+
+                        <!-- Duplicate project cards for seamless looping -->
+                        <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%205/Password%20Generator%20Project/task.py" class="project-card" target="_blank">
+                            <img src="Assets/Images/password-generator.jpg" alt="Password Generator">
+                            <div class="project-info">
+                                <h3>Password Generator</h3>
+                                <p>Python-based secure password generator</p>
+                            </div>
+                        </a>
+                        <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2014/Higher%20or%20Lower%20Project/main.py" class="project-card" target="_blank">
+                            <img src="Assets/Images/higher-lower.png" alt="Higher Lower Game">
+                            <div class="project-info">
+                                <h3>Higher Lower Game</h3>
+                                <p>Interactive number guessing game</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
+                <div class="slider-bar">
+                    <div class="slider-progress" id="sliderProgress"></div>
+                </div>
             </div>
-        </section>
+        </div>
 
         <!-- Awards and Certifications Section -->
         <section id="awards">
-            <h2>Awards and Certifications</h2>
-            <div class="certificates-gallery">
-                <div class="certificate-item">
-                    <img src="Assets/Images/techfuse.png" alt="Certificate 1">
-                </div>
-                <div class="certificate-item">
-                    <img src="Assets/Images/SoloLearn sql.jpg" alt="Certificate 2">
-                </div>
-                <div class="certificate-item">
-                    <img src="Assets/Images/design-thinking.png" alt="Certificate 3">
-                </div>
-                <div class="certificate-item">
-                    <img src="Assets/Images/tri-biz.png" alt="Certificate 4">
+            <div class="certificates-container">
+                <h2>Awards and Certifications</h2>
+                <div class="certificates-grid">
+                    <a href="Assets/Images/techfuse.png" class="certificate-card" target="_blank">
+                        <img src="Assets/Images/techfuse.png" alt="TechFuse Certificate">
+                        <div class="certificate-details">
+                            <h3>TechFuse 2024</h3>
+                            <p>Tech Innovation Competition</p>
+                        </div>
+                    </a>
+
+                    <a href="Assets/Images/SoloLearn sql.jpg" class="certificate-card" target="_blank">
+                        <img src="Assets/Images/SoloLearn sql.jpg" alt="SQL Certificate">
+                        <div class="certificate-details">
+                            <h3>SQL Fundamentals</h3>
+                            <p>SoloLearn Certification</p>
+                        </div>
+                    </a>
+
+                    <a href="Assets/Images/design-thinking.png" class="certificate-card" target="_blank">
+                        <img src="Assets/Images/design-thinking.png" alt="Design Thinking">
+                        <div class="certificate-details">
+                            <h3>Design Thinking</h3>
+                            <p>UX/UI Design Principles</p>
+                        </div>
+                    </a>
+
+                    <a href="Assets/Images/tri-biz.png" class="certificate-card" target="_blank">
+                        <img src="Assets/Images/tri-biz.png" alt="Business Challenge">
+                        <div class="certificate-details">
+                            <h3>Tri-Biz Challenge</h3>
+                            <p>Business Innovation Award</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>You can reach me at</p>
-        </section>
     </main>
 
     <button id="backToTop" class="back-to-top">↑</button>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
+    <footer id="footer-section"> <!-- Added ID here -->
+        <div class="footer-main">
+            <div class="footer-content">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#awards">Awards And Certifications</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#awards">Awards & Certifications</a></li>
                 </ul>
             </div>
-            <div class="footer-connect">
-                <h3>Connect</h3>
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/aman-kr-mandal-8855922a9/" target="_blank">LinkedIn</a>
-                    </li>
-                    <li><a href="https://github.com/amankrm-dev" target="_blank">GitHub</a></li>
+
+            <div class="footer-content">
+                <h4>Connect</h4>
+                <ul class="footer-connect">
+                    <li><a href="https://www.linkedin.com/in/aman-kr-mandal-8855922a9/">LinkedIn Profile</a></li>
+                    <li><a href="https://github.com/amankrm-dev">GitHub Profile</a></li>
+                    <li><a href="mailto:shoorveer681@gmail.com">Email Me</a></li>
                 </ul>
             </div>
-            <div class="footer-contact">
-                <h3>Contact</h3>
-                <p><a href="mailto:shoorveer681@gmail.com">Email Me</a></p>
+
+            <div class="footer-content">
+                <h4>About This Site</h4>
+                <p>Personal portfolio showcasing my projects, experience, and skills in web development and programming.
+                </p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Aman Kumar Mandal | All rights reserved</p>
+
+        <div class="stay-connected">
+            <h4>Stay Connected</h4>
+            <div class="social-icons">
+                <a href="https://github.com/amankrm-dev" class="social-icon" aria-label="GitHub">
+                    <img src="./Assets/Images/github.png" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/aman-kr-mandal-8855922a9/" class="social-icon" aria-label="LinkedIn">
+                    <img src="./Assets/Images/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="mailto:shoorveer681@gmail.com" class="social-icon" aria-label="Email">
+                    <img src="./Assets/Images/mail.jpg" alt="Email">
+                </a>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Aman Kumar Mandal. All rights reserved.</p>
         </div>
     </footer>
 </body>

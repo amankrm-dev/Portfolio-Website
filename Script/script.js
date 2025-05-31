@@ -5,8 +5,21 @@ function toggleMenu() {
 
     mobileMenu.classList.toggle('active');
     hamburger.classList.toggle('active');
-    body.classList.toggle('menu-open'); // Toggle body scroll
+    body.classList.toggle('menu-open');
 }
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
+    const body = document.body;
+
+    if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+        body.classList.remove('menu-open');
+    }
+});
 
 // Close mobile menu when clicking a link
 document.querySelectorAll('.nav_right a').forEach(link => {
@@ -56,95 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     typeWord();
 });
 
-// Update the certificate swipe functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const gallery = document.querySelector('.certificates-gallery');
-    const certificates = Array.from(document.querySelectorAll('.certificate-item'));
-    let startX = 0;
-    let currentX = 0;
-    let isDragging = false;
-    let currentIndex = 0;
-
-    // Add event listeners for both touch and mouse events
-    gallery.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.clientX;
-    });
-
-    gallery.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        currentX = e.clientX;
-        const diff = startX - currentX;
-
-        if (Math.abs(diff) > 30) {
-            if (diff > 0) {
-                animateSwipe('left');
-            } else {
-                animateSwipe('right');
-            }
-            isDragging = false;
-        }
-    });
-
-    gallery.addEventListener('mouseup', () => {
-        isDragging = false;
-    });
-
-    gallery.addEventListener('mouseleave', () => {
-        isDragging = false;
-    });
-
-    gallery.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        startX = e.touches[0].clientX;
-    }, { passive: true });
-
-    gallery.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        currentX = e.touches[0].clientX;
-        const diff = startX - currentX;
-
-        if (Math.abs(diff) > 30) {
-            if (diff > 0) {
-                animateSwipe('left');
-            } else {
-                animateSwipe('right');
-            }
-            isDragging = false;
-        }
-    }, { passive: true });
-
-    gallery.addEventListener('touchend', () => {
-        isDragging = false;
-    });
-
-    function animateSwipe(direction) {
-        const positions = [
-            { x: 100, scale: 1, z: 4 },
-            { x: 30, scale: 0.95, z: 3 },
-            { x: -30, scale: 0.9, z: 2 },
-            { x: -100, scale: 0.85, z: 1 }
-        ];
-
-        if (direction === 'left') {
-            currentIndex = (currentIndex + 1) % certificates.length;
-        } else if (direction === 'right') {
-            currentIndex = (currentIndex - 1 + certificates.length) % certificates.length;
-        }
-
-        certificates.forEach((cert, index) => {
-            const position = (index - currentIndex + certificates.length) % certificates.length;
-            const pos = positions[position] || positions[positions.length - 1];
-
-            cert.style.transform = `translateX(-50%) translateX(${pos.x}px) scale(${pos.scale})`;
-            cert.style.zIndex = pos.z;
-        });
-    }
-
-    // Initialize positions
-    animateSwipe('none');
-});
-
 document.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('#navLinks a');
@@ -158,6 +82,30 @@ document.addEventListener('scroll', () => {
     });
 });
 
+// Remove unused profile picture animation observer
+document.addEventListener("DOMContentLoaded", () => {
+    const aboutSection = document.querySelector("#about");
+    const profilePicture = document.querySelector(".profile-picture img");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Add the 3D rotation animation when the section is in view
+                    profilePicture.style.animation = "rotate3D 1s ease-in-out";
+                    profilePicture.addEventListener("animationend", () => {
+                        profilePicture.style.animation = ""; // Reset animation
+                    });
+                }
+            });
+        },
+        { threshold: 0.5 } // Trigger when 50% of the section is visible
+    );
+
+    observer.observe(aboutSection);
+});
+
+// Remove unused sections observer
 const sections = document.querySelectorAll('section');
 
 const observer = new IntersectionObserver((entries) => {
@@ -184,24 +132,30 @@ backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const aboutSection = document.querySelector("#about");
-    const profilePicture = document.querySelector(".profile-picture img");
+// Remove the slider functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const projectCards = document.querySelector('.project-cards');
+    if (projectCards) {
+        // No slider functionality needed
+    }
+});
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    // Add the 3D rotation animation when the section is in view
-                    profilePicture.style.animation = "rotate3D 1s ease-in-out";
-                    profilePicture.addEventListener("animationend", () => {
-                        profilePicture.style.animation = ""; // Reset animation
-                    });
-                }
-            });
-        },
-        { threshold: 0.5 } // Trigger when 50% of the section is visible
-    );
+document.addEventListener('DOMContentLoaded', () => {
+    const aboutImage = document.querySelector('.about-image img');
 
-    observer.observe(aboutSection);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                aboutImage.classList.add('animate');
+                // Remove the animation class after it completes
+                aboutImage.addEventListener('animationend', () => {
+                    aboutImage.classList.remove('animate');
+                });
+            }
+        });
+    }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+    if (aboutImage) {
+        observer.observe(document.querySelector('#about'));
+    }
 });
