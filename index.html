@@ -3,263 +3,363 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Aman Kumar's Portfolio</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Kumar Mandal — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Style/style.css" />
     <link rel="shortcut icon" href="Assets/Images/favicon.png" type="image/x-icon">
     <script src="Script/script.js" defer></script>
 </head>
 
 <body>
+
+    <!-- ── Navigation ── -->
     <header>
         <nav>
-            <div class="nav_left">
-                <h2>A </h2>
-                <h1>K</h1>
-                <h2>M</h2>
-            </div>
-
-            <!-- Add hamburger menu -->
-            <div class="hamburger" onclick="toggleMenu()">
+            <a href="#" class="logo">AK<span>M</span></a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-
-            <div class="nav_right" id="mobileMenu">
-                <ul id="navLinks">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#awards">Awards And Certifications</a></li>
-                    <li><a href="#footer-section">Contact</a></li> 
-                </ul>
-            </div>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#footer-section">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <section id="landing-page">
-            <div class="intro">
-                <h1>Hi, I'm <span style="color: #222;">Aman Kumar Mandal</span> <span class="wave">👋</span></h1>
-                <h2>I'm a <span style="color: #f9f9f9;" id="typing-effect"></span></h2>
-                <p>Welcome to my portfolio, Explore my work and feel free to connect!</p>
+
+        <!-- ── Hero ── -->
+        <section id="hero">
+            <div class="hero-left">
+                <span class="hero-label">PORTFOLIO &mdash; 2025</span>
+                <h1 class="hero-name">
+                    <span>AMAN</span>
+                    <span>KUMAR</span>
+                    <span class="name-red">MANDAL.</span>
+                </h1>
+                <div class="hero-divider"></div>
+                <p class="hero-tagline">BCA Student &mdash; Developer &amp; Designer</p>
+                <p class="hero-typing">I build <span id="typing-effect"></span><span class="cursor">_</span></p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Work</a>
+                    <a href="#footer-section" class="btn btn-ghost">Contact Me</a>
+                </div>
             </div>
-            <div class="intro-video">
-                <video autoplay loop muted playsinline>
-                    <source src="Assets/Videos/IntroMainVIDEO.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="hero-right">
+                <div class="hero-stat">
+                    <span class="stat-number">02<span class="stat-red">+</span></span>
+                    <span class="stat-label">YEARS CODING</span>
+                </div>
+                <div class="stat-line"></div>
+                <div class="hero-stat">
+                    <span class="stat-number">05<span class="stat-red">+</span></span>
+                    <span class="stat-label">PROJECTS BUILT</span>
+                </div>
+                <div class="stat-line"></div>
+                <div class="hero-stat">
+                    <span class="stat-number">BCA</span>
+                    <span class="stat-label">CURRENTLY STUDYING</span>
+                </div>
+                <div class="stat-line"></div>
+                <div class="hero-stat">
+                    <span class="stat-number stat-red">OPEN</span>
+                    <span class="stat-label">TO OPPORTUNITIES</span>
+                </div>
             </div>
         </section>
 
-        <section id="about">
-            <div class="about-image">
-                <img src="Assets/Images/aboutme.png" alt="About Me Illustration">
+        <!-- ── About ── -->
+        <section id="about" class="reveal">
+            <div class="about-top">
+                <span class="section-tag">01 / ABOUT</span>
+                <blockquote class="about-statement">
+                    I build things that are fast, clean, and intuitive &mdash;
+                    because great software starts with great design thinking.
+                </blockquote>
             </div>
-            <div class="about-content">
-                <ul>
-                    <li>👨‍🎓 I'm a BCA student with a strong passion for coding, design, and building real-world tech
-                        solutions.</li>
-                    <li>💻 I love working with Java and Python, and I enjoy developing responsive, user-friendly
-                        websites using HTML, CSS, and JavaScript.</li>
-                    <li>🎨 UI/UX design excites me — I focus on creating clean, intuitive interfaces that enhance user
-                        experience.</li>
-                    <li>📚 I'm actively improving my problem-solving skills through data structures and algorithms, and
-                        I'm always up for a new coding challenge.</li>
-                    <li>🚀 Curious and self-driven, I'm constantly learning, experimenting with new technologies, and
-                        building projects that push my limits.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Journey Section -->
-        <section id="journey">
-            <div class="journey-container">
-                <h2>Here's a quick look at my journey</h2>
-                <a href="https://www.figma.com/proto/iesQyjpZ7celhZTAhLeUti/Resme--Aman-Kr.-?node-id=57-9&p=f&t=6Rc1xcDEMggh0OxL-1&scaling=min-zoom&content-scaling=fixed&page-id=57%3A8" class="resume-button" target="_blank">View Resume</a>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <div class="experience-container" id="experience">
-            <div class="experience-frame">
-                <div class="experience-content">
-                    <h2>Experience</h2>
-                    <div class="experience-item">
-                        <h3>Content Researcher</h3>
-                        <p><strong>Company:</strong> Exam Masters Nepal</p>
-                        <p><strong>Duration:</strong> 2081 (Baishak-Ashad)</p>
-                        <p><strong>Responsibilities:</strong> Responsible for sourcing, editing, organizing, and managing educational content across various formats and platforms, ensuring accuracy, relevance, and accessibility for target audiences.</p>
+            <div class="about-body">
+                <div class="about-text">
+                    <p>Currently pursuing my BCA degree while building real-world tech solutions. I work primarily
+                        with Java and Python on the backend, and create responsive, user-friendly interfaces with
+                        HTML, CSS, and JavaScript.</p>
+                    <p>UI/UX design is a core interest &mdash; I actively sharpen my problem-solving skills through
+                        data structures and algorithms, and I&rsquo;m always looking for the next challenge.</p>
+                </div>
+                <div class="about-facts">
+                    <div class="fact-item">
+                        <span class="fact-label">LOCATION</span>
+                        <span class="fact-value">Nepal</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">EDUCATION</span>
+                        <span class="fact-value">BCA &mdash; Ongoing</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">FOCUS</span>
+                        <span class="fact-value">Dev &amp; Design</span>
+                    </div>
+                    <div class="fact-item">
+                        <span class="fact-label">STATUS</span>
+                        <span class="fact-value status-red">Available</span>
                     </div>
                 </div>
-                <div class="experience-image">
-                    <img src="Assets/Images/experience.png" alt="Experience Illustration">
-                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Projects Section -->
-        <div class="projects-gallery-section" id="projects">
-            <div class="projects-container">
-                <h2>Projects</h2>
-                <div class="projects-slider">
-                    <div class="project-cards">
-                    
-                        <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%205/Password%20Generator%20Project/task.py" class="project-card" target="_blank">
-                            <img src="Assets/Images/password-generator.jpg" alt="Password Generator">
-                            <div class="project-info">
-                                <h3>Password Generator</h3>
-                                <p>Python-based secure password generator</p>
-                            </div>
-                        </a>
-                        <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2014/Higher%20or%20Lower%20Project/main.py" class="project-card" target="_blank">
-                            <img src="Assets/Images/higher-lower.png" alt="Higher Lower Game">
-                            <div class="project-info">
-                                <h3>Higher Lower Game</h3>
-                                <p>Interactive number guessing game</p>
-                            </div>
-                        </a>
-                        <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%207/task/main.py" class="project-card" target="_blank">
-                            <img src="Assets/Images/hangman.png" alt="Hangman Game">
-                            <div class="project-info">
-                                <h3>Hangman Game</h3>
-                                <p>Classic word guessing game</p>
-                            </div>
-                        </a>
-                        <a href="https://github.com/amankrm-dev/NClone?tab=readme-ov-file" class="project-card" target="_blank">
-                            <img src="Assets/Images/netflix.jpg" alt="Netflix Clone">
-                            <div class="project-info">
-                                <h3>Netflix Clone</h3>
-                                <p>Streaming platform UI clone</p>
-                            </div>
-                        </a>
-                        <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2015/Coffee%20Machine%20Project/main.py" class="project-card" target="_blank">
-                            <img src="Assets/Images/coffeeMachine.jpg" alt="Coffee Machine">
-                            <div class="project-info">
-                                <h3>Coffee Machine</h3>
-                                <p>Python-based coffee vending simulation</p>
-                            </div>
-                        </a>
-
-                        <!-- Duplicate project cards for seamless looping -->
-                        <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%205/Password%20Generator%20Project/task.py" class="project-card" target="_blank">
-                            <img src="Assets/Images/password-generator.jpg" alt="Password Generator">
-                            <div class="project-info">
-                                <h3>Password Generator</h3>
-                                <p>Python-based secure password generator</p>
-                            </div>
-                        </a>
-                        <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2014/Higher%20or%20Lower%20Project/main.py" class="project-card" target="_blank">
-                            <img src="Assets/Images/higher-lower.png" alt="Higher Lower Game">
-                            <div class="project-info">
-                                <h3>Higher Lower Game</h3>
-                                <p>Interactive number guessing game</p>
-                            </div>
-                        </a>
+        <!-- ── Skills ── -->
+        <section id="skills" class="reveal alt-bg">
+            <div class="section-header">
+                <span class="section-tag">02 / SKILLS</span>
+                <h2>What I Work With</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Languages</h3>
+                    <div class="skill-badges">
+                        <span class="badge">Java</span>
+                        <span class="badge">Python</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">SQL</span>
+                        <span class="badge">HTML5</span>
+                        <span class="badge">CSS3</span>
                     </div>
                 </div>
-                <div class="slider-bar">
-                    <div class="slider-progress" id="sliderProgress"></div>
+                <div class="skill-group">
+                    <h3>Tools &amp; Platforms</h3>
+                    <div class="skill-badges">
+                        <span class="badge">Git &amp; GitHub</span>
+                        <span class="badge">Figma</span>
+                        <span class="badge">VS Code</span>
+                        <span class="badge">IntelliJ IDEA</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Concepts</h3>
+                    <div class="skill-badges">
+                        <span class="badge">OOP</span>
+                        <span class="badge">DSA</span>
+                        <span class="badge">UI/UX Design</span>
+                        <span class="badge">Responsive Design</span>
+                        <span class="badge">Problem Solving</span>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Awards and Certifications Section -->
-        <section id="awards">
-            <div class="certificates-container">
-                <h2>Awards and Certifications</h2>
-                <div class="certificates-grid">
-                    <a href="Assets/Images/techfuse.png" class="certificate-card" target="_blank">
-                        <img src="Assets/Images/techfuse.png" alt="TechFuse Certificate">
-                        <div class="certificate-details">
+        <!-- ── Resume CTA ── -->
+        <section id="journey" class="reveal">
+            <div class="journey-inner">
+                <span class="section-tag journey-tag">03 / RESUME</span>
+                <h2>See the full picture.</h2>
+                <p>Education, experience, and accomplishments &mdash; all in one place.</p>
+                <a href="https://www.figma.com/proto/iesQyjpZ7celhZTAhLeUti/Resme--Aman-Kr.-?node-id=57-9&p=f&t=6Rc1xcDEMggh0OxL-1&scaling=min-zoom&content-scaling=fixed&page-id=57%3A8"
+                   class="btn btn-journey" target="_blank" rel="noopener">View Resume &rarr;</a>
+            </div>
+        </section>
+
+        <!-- ── Experience ── -->
+        <section id="experience" class="reveal alt-bg">
+            <div class="section-wrapper">
+                <div class="section-header">
+                    <span class="section-tag">04 / EXPERIENCE</span>
+                    <h2>Work History</h2>
+                </div>
+                <div class="experience-list">
+                    <div class="experience-entry">
+                        <div class="exp-left">
+                            <span class="exp-date">2081 BS<br>Baishak &ndash; Ashad</span>
+                        </div>
+                        <div class="exp-right">
+                            <h3>Content Researcher</h3>
+                            <p class="exp-company">Exam Masters Nepal</p>
+                            <p>Sourcing, editing, organizing, and managing educational content across formats and
+                                platforms &mdash; ensuring accuracy, relevance, and accessibility for target audiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Projects ── -->
+        <section id="projects" class="reveal">
+            <div class="section-wrapper">
+                <div class="section-header">
+                    <span class="section-tag">05 / PROJECTS</span>
+                    <h2>Things I&rsquo;ve Built</h2>
+                </div>
+            </div>
+            <div class="projects-track-wrapper">
+                <div class="projects-track">
+                    <!-- Original set -->
+                    <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%205/Password%20Generator%20Project/task.py"
+                       class="project-card" target="_blank" rel="noopener">
+                        <div class="project-num">01</div>
+                        <div class="project-info">
+                            <h3>Password Generator</h3>
+                            <p>Secure password generator with customisable length and character sets.</p>
+                            <span class="project-tag">Python</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2014/Higher%20or%20Lower%20Project/main.py"
+                       class="project-card" target="_blank" rel="noopener">
+                        <div class="project-num">02</div>
+                        <div class="project-info">
+                            <h3>Higher Lower Game</h3>
+                            <p>Celebrity-follower guessing game with score tracking and terminal UI.</p>
+                            <span class="project-tag">Python</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%207/task/main.py"
+                       class="project-card" target="_blank" rel="noopener">
+                        <div class="project-num">03</div>
+                        <div class="project-info">
+                            <h3>Hangman Game</h3>
+                            <p>Classic word-guessing game with ASCII art, lives counter, and vocabulary bank.</p>
+                            <span class="project-tag">Python</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/amankrm-dev/NClone?tab=readme-ov-file"
+                       class="project-card" target="_blank" rel="noopener">
+                        <div class="project-num">04</div>
+                        <div class="project-info">
+                            <h3>Netflix Clone</h3>
+                            <p>Pixel-perfect Netflix landing page clone built with HTML &amp; CSS.</p>
+                            <span class="project-tag">HTML / CSS</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2015/Coffee%20Machine%20Project/main.py"
+                       class="project-card" target="_blank" rel="noopener">
+                        <div class="project-num">05</div>
+                        <div class="project-info">
+                            <h3>Coffee Machine</h3>
+                            <p>OOP-based coffee vending machine simulation with ingredient management.</p>
+                            <span class="project-tag">Python / OOP</span>
+                        </div>
+                    </a>
+                    <!-- Duplicate set for seamless CSS loop -->
+                    <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%205/Password%20Generator%20Project/task.py"
+                       class="project-card" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <div class="project-num">01</div>
+                        <div class="project-info"><h3>Password Generator</h3><p>Secure password generator with customisable length and character sets.</p><span class="project-tag">Python</span></div>
+                    </a>
+                    <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2014/Higher%20or%20Lower%20Project/main.py"
+                       class="project-card" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <div class="project-num">02</div>
+                        <div class="project-info"><h3>Higher Lower Game</h3><p>Celebrity-follower guessing game with score tracking and terminal UI.</p><span class="project-tag">Python</span></div>
+                    </a>
+                    <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%207/task/main.py"
+                       class="project-card" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <div class="project-num">03</div>
+                        <div class="project-info"><h3>Hangman Game</h3><p>Classic word-guessing game with ASCII art, lives counter, and vocabulary bank.</p><span class="project-tag">Python</span></div>
+                    </a>
+                    <a href="https://github.com/amankrm-dev/NClone?tab=readme-ov-file"
+                       class="project-card" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <div class="project-num">04</div>
+                        <div class="project-info"><h3>Netflix Clone</h3><p>Pixel-perfect Netflix landing page clone built with HTML &amp; CSS.</p><span class="project-tag">HTML / CSS</span></div>
+                    </a>
+                    <a href="https://github.com/amankrm-dev/100DaysofCode-TheCompletePythonProBootcamp/blob/master/Day%2015/Coffee%20Machine%20Project/main.py"
+                       class="project-card" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <div class="project-num">05</div>
+                        <div class="project-info"><h3>Coffee Machine</h3><p>OOP-based coffee vending machine simulation with ingredient management.</p><span class="project-tag">Python / OOP</span></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Awards ── -->
+        <section id="awards" class="reveal alt-bg">
+            <div class="section-wrapper">
+                <div class="section-header">
+                    <span class="section-tag">06 / RECOGNITION</span>
+                    <h2>Awards &amp; Certifications</h2>
+                </div>
+                <div class="awards-grid">
+                    <div class="award-card">
+                        <span class="award-icon">TF</span>
+                        <div class="award-info">
                             <h3>TechFuse 2024</h3>
                             <p>Tech Innovation Competition</p>
                         </div>
-                    </a>
-
-                    <a href="Assets/Images/SoloLearn sql.jpg" class="certificate-card" target="_blank">
-                        <img src="Assets/Images/SoloLearn sql.jpg" alt="SQL Certificate">
-                        <div class="certificate-details">
+                    </div>
+                    <div class="award-card">
+                        <span class="award-icon">SQL</span>
+                        <div class="award-info">
                             <h3>SQL Fundamentals</h3>
                             <p>SoloLearn Certification</p>
                         </div>
-                    </a>
-
-                    <a href="Assets/Images/design-thinking.png" class="certificate-card" target="_blank">
-                        <img src="Assets/Images/design-thinking.png" alt="Design Thinking">
-                        <div class="certificate-details">
+                    </div>
+                    <div class="award-card">
+                        <span class="award-icon">DT</span>
+                        <div class="award-info">
                             <h3>Design Thinking</h3>
                             <p>UX/UI Design Principles</p>
                         </div>
-                    </a>
-
-                    <a href="Assets/Images/tri-biz.png" class="certificate-card" target="_blank">
-                        <img src="Assets/Images/tri-biz.png" alt="Business Challenge">
-                        <div class="certificate-details">
+                    </div>
+                    <div class="award-card">
+                        <span class="award-icon">TB</span>
+                        <div class="award-info">
                             <h3>Tri-Biz Challenge</h3>
                             <p>Business Innovation Award</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <button id="backToTop" class="back-to-top">↑</button>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">&#8593;</button>
 
-    <footer id="footer-section"> <!-- Added ID here -->
-        <div class="footer-main">
-            <div class="footer-content">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
+    <!-- ── Footer ── -->
+    <footer id="footer-section">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo">AK<span>M</span></span>
+                <p>Building clean, purposeful digital experiences.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#awards">Awards & Certifications</a></li>
+                    <li><a href="#awards">Awards</a></li>
                 </ul>
             </div>
-
-            <div class="footer-content">
+            <div class="footer-col">
                 <h4>Connect</h4>
-                <ul class="footer-connect">
-                    <li><a href="https://www.linkedin.com/in/aman-kr-mandal-8855922a9/">LinkedIn Profile</a></li>
-                    <li><a href="https://github.com/amankrm-dev">GitHub Profile</a></li>
-                    <li><a href="mailto:shoorveer681@gmail.com">Email Me</a></li>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/aman-kr-mandal-8855922a9/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://github.com/amankrm-dev" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="mailto:shoorveer681@gmail.com">shoorveer681@gmail.com</a></li>
                 </ul>
             </div>
-
-            <div class="footer-content">
-                <h4>About This Site</h4>
-                <p>Personal portfolio showcasing my projects, experience, and skills in web development and programming.
-                </p>
-            </div>
         </div>
-
-        <div class="stay-connected">
-            <h4>Stay Connected</h4>
-            <div class="social-icons">
-                <a href="https://github.com/amankrm-dev" class="social-icon" aria-label="GitHub">
-                    <img src="./Assets/Images/github.png" alt="GitHub">
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aman Kumar Mandal &mdash; All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/amankrm-dev" aria-label="GitHub" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/aman-kr-mandal-8855922a9/" class="social-icon" aria-label="LinkedIn">
-                    <img src="./Assets/Images/linkedin.png" alt="LinkedIn">
+                <a href="https://www.linkedin.com/in/aman-kr-mandal-8855922a9/" aria-label="LinkedIn" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </a>
-                <a href="mailto:shoorveer681@gmail.com" class="social-icon" aria-label="Email">
-                    <img src="./Assets/Images/mail.jpg" alt="Email">
+                <a href="mailto:shoorveer681@gmail.com" aria-label="Email">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 </a>
             </div>
-        </div>
-
-        <div class="copyright">
-            <p>&copy; 2025 Aman Kumar Mandal. All rights reserved.</p>
         </div>
     </footer>
-</body>
 
+</body>
 </html>
