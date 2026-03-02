@@ -1114,3 +1114,172 @@ footer {
     #projects .section-header::before,
     #awards .section-header::before { font-size: 4rem; opacity: 0.5; }
 }
+
+/* ============================================================
+   ANIMATIONS & TRANSITIONS — v5
+   ============================================================ */
+
+/* ---- Page Load Fade ---- */
+@keyframes pageFade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+body { animation: pageFade 0.45s ease 0.05s both; }
+
+/* ---- Hero Entrance Keyframes ---- */
+@keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroSlideRight {
+    from { opacity: 0; transform: translateX(36px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes drawLine {
+    from { width: 0; opacity: 0; }
+    to   { width: 56px; opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px);   }
+    50%       { transform: translateY(-9px); }
+}
+
+/* Staggered hero entrance — each child offset by ~0.15s */
+.hero-label                  { animation: heroFadeUp    0.65s ease 0.15s both; }
+.hero-name span:nth-child(1) { animation: heroFadeUp    0.70s ease 0.30s both; }
+.hero-name span:nth-child(2) { animation: heroFadeUp    0.70s ease 0.46s both; }
+.hero-name span:nth-child(3) { animation: heroFadeUp    0.70s ease 0.62s both; }
+.hero-divider                { animation: drawLine      0.85s ease 0.80s both; }
+.hero-tagline                { animation: heroFadeUp    0.60s ease 0.92s both; }
+.hero-typing                 { animation: heroFadeUp    0.60s ease 1.04s both; }
+.hero-cta                    { animation: heroFadeUp    0.60s ease 1.16s both; }
+
+/* Stats panel: slide from right, then float */
+.hero-right {
+    animation:
+        heroSlideRight 0.80s ease 0.50s both,
+        float          6.5s ease-in-out 2.20s infinite;
+}
+
+/* ---- Scroll Progress Bar ---- */
+#progress-bar {
+    position: fixed;
+    top: 66px;
+    left: 0;
+    height: 2.5px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--red), #ff6b6b, var(--red));
+    background-size: 200% 100%;
+    z-index: 1001;
+    pointer-events: none;
+    transition: width 0.08s linear;
+    animation: progressGlow 3s linear infinite;
+}
+@keyframes progressGlow {
+    0%   { background-position: 0%   0%; }
+    100% { background-position: 200% 0%; }
+}
+
+/* ---- Header: shadow on scroll ---- */
+header { transition: box-shadow 0.35s ease; }
+header.scrolled { box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07); }
+
+/* ---- About Statement: border draws in on reveal ---- */
+.about-statement {
+    border-left: none;
+    position: relative;
+    padding-left: 28px;
+}
+.about-statement::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 0;
+    background: var(--red);
+    border-radius: 2px;
+    transition: height 0.95s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
+}
+#about.reveal.visible .about-statement::before { height: 100%; }
+
+/* ---- CTA Section: diagonal lines slowly move ---- */
+@keyframes diagonalMove {
+    from { background-position: 0 0, 0 0; }
+    to   { background-position: 80px 0, 0 0; }
+}
+#journey::before { animation: diagonalMove 20s linear infinite; }
+
+/* ---- Skill Badges: lift + glow on hover ---- */
+.badge {
+    transition:
+        background    var(--ease),
+        border-color  var(--ease),
+        color         var(--ease),
+        transform     var(--ease),
+        box-shadow    var(--ease);
+}
+.badge:hover {
+    box-shadow: 0 4px 14px rgba(230, 57, 70, 0.18);
+    transform: translateY(-2px);
+}
+
+/* ---- Project Number: scale on hover ---- */
+.project-num {
+    transition: color 0.40s ease, transform 0.40s ease;
+    display: inline-block;
+}
+.project-card:hover .project-num { transform: scale(1.06); }
+
+/* ---- Buttons: press micro-interaction ---- */
+.btn:active, .btn-journey:active {
+    transform: translateY(0) scale(0.96) !important;
+}
+
+/* ---- Back-to-Top: ring pulse on hover ---- */
+@keyframes ringPulse {
+    0%   { box-shadow: 0 4px 16px rgba(230,57,70,0.40), 0 0 0 0  rgba(230,57,70,0.30); }
+    70%  { box-shadow: 0 4px 16px rgba(230,57,70,0.40), 0 0 0 14px rgba(230,57,70,0); }
+    100% { box-shadow: 0 4px 16px rgba(230,57,70,0.40), 0 0 0 0  rgba(230,57,70,0); }
+}
+.back-to-top:hover { animation: ringPulse 1.2s ease infinite; }
+
+/* ---- Stagger reveal — JS sets inline transition-delay per child ---- */
+.skill-group,
+.award-card,
+.fact-item {
+    transition:
+        opacity   0.55s ease,
+        transform 0.55s ease,
+        box-shadow var(--ease),
+        transform  var(--ease);
+}
+
+/* ---- Award card: subtle background highlight on hover ---- */
+.award-card:hover { background: rgba(255, 255, 255, 0.78); }
+
+/* ---- Section heading underline draws in ---- */
+.section-header h2 {
+    display: inline-block;
+    background: linear-gradient(var(--red), var(--red)) bottom / 0% 2px no-repeat;
+    background-position: left bottom;
+    padding-bottom: 4px;
+    transition: background-size 0.7s ease 0.2s;
+}
+.reveal.visible .section-header h2 { background-size: 48px 2px; }
+
+/* ---- Experience entry: hover lift ---- */
+.experience-entry { transition: transform 0.3s ease; }
+.experience-entry:hover { transform: translateX(6px); }
+
+/* ---- Footer social icons: bounce ---- */
+.footer-socials a {
+    transition: color var(--ease), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.footer-socials a:hover {
+    color: #f2f2f2;
+    transform: translateY(-4px) scale(1.15);
+}

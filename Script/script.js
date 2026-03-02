@@ -1,6 +1,35 @@
 /* ============================================================
-   PORTFOLIO v2 — script.js
+   PORTFOLIO v5 — script.js
+   Animations: scroll progress, header shadow, counters,
+                stagger reveal, typing, back-to-top, nav
    ============================================================ */
+
+/* ---- Scroll Progress Bar (injected) ---- */
+const progressBar = document.createElement('div');
+progressBar.id = 'progress-bar';
+document.body.prepend(progressBar);
+
+/* ---- Header reference ---- */
+const headerEl = document.querySelector('header');
+
+/* ---- Back to Top ---- */
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    /* Progress bar */
+    const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    progressBar.style.width = (scrolled * 100).toFixed(2) + '%';
+
+    /* Header shadow */
+    headerEl.classList.toggle('scrolled', window.scrollY > 20);
+
+    /* Back to top */
+    backToTop.style.display = window.scrollY > 400 ? 'flex' : 'none';
+}, { passive: true });
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 /* ---- Hamburger Menu ---- */
 const hamburger = document.getElementById('hamburger');
@@ -52,14 +81,87 @@ function eraseWord() {
     }
 }
 
-/* ---- Scroll Reveal ---- */
+/* ---- Counter Animation (hero stats) ---- */
+function animateCounter(el, target, delay = 0) {
+    const textNode = el.childNodes[0];
+    if (!textNode || textNode.nodeType !== Node.TEXT_NODE) return;
+
+    const duration  = 1300;
+    let   startTime = null;
+
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+    const run = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const elapsed  = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const value    = Math.floor(easeOutCubic(progress) * target);
+        textNode.textContent = String(value).padStart(2, '0');
+        if (progress < 1) requestAnimationFrame(run);
+    };
+
+    setTimeout(() => requestAnimationFrame(run), delay);
+}
+
+function initCounters() {
+    document.querySelectorAll('.stat-number').forEach(el => {
+        const textNode = el.childNodes[0];
+        if (!textNode || textNode.nodeType !== Node.TEXT_NODE) return;
+        const num = parseInt(textNode.textContent.trim());
+        if (isNaN(num)) return;
+
+        const obs = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateCounter(el, num);
+                obs.disconnect();
+            }
+        }, { threshold: 0.6 });
+        obs.observe(el);
+    });
+}
+
+/* ---- Stagger Reveal for Grid Children ---- */
+function initStagger() {
+    const staggerTargets = document.querySelectorAll(
+        '.skills-grid, .awards-grid, .about-facts, .experience-list'
+    );
+
+    const staggerObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const children = entry.target.querySelectorAll(
+                '.skill-group, .award-card, .fact-item, .experience-entry'
+            );
+
+            children.forEach((child, i) => {
+                child.style.opacity   = '0';
+                child.style.transform = 'translateY(20px)';
+                child.style.transitionDelay = `${i * 0.12}s`;
+
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        child.style.opacity   = '1';
+                        child.style.transform = 'translateY(0)';
+                    });
+                });
+            });
+
+            staggerObs.unobserve(entry.target);
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    staggerTargets.forEach(el => staggerObs.observe(el));
+}
+
+/* ---- Scroll Reveal (sections) ---- */
 const revealObserver = new IntersectionObserver(
     (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');
         });
     },
-    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.07, rootMargin: '0px 0px -40px 0px' }
 );
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
@@ -83,18 +185,9 @@ const navObserver = new IntersectionObserver(
 
 sections.forEach(section => navObserver.observe(section));
 
-/* ---- Back to Top ---- */
-const backToTop = document.getElementById('backToTop');
-
-window.addEventListener('scroll', () => {
-    backToTop.style.display = window.scrollY > 400 ? 'flex' : 'none';
-});
-
-backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
 /* ---- Init ---- */
 document.addEventListener('DOMContentLoaded', () => {
     typeWord();
+    initCounters();
+    initStagger();
 });
