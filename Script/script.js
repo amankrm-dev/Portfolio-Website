@@ -1,8 +1,31 @@
 /* ============================================================
-   PORTFOLIO v5 — script.js
+   PORTFOLIO v6 — script.js
    Animations: scroll progress, header shadow, counters,
                 stagger reveal, typing, back-to-top, nav
+   Theme:       dark/light toggle + prefers-color-scheme
    ============================================================ */
+
+/* ---- Theme System ---- */
+const html = document.documentElement;
+const themeToggle = document.getElementById('themeToggle');
+
+function applyTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+}
+
+/* Toggle on button click */
+themeToggle.addEventListener('click', () => {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    applyTheme(isDark ? 'light' : 'dark');
+});
+
+/* Follow system preference changes only when user hasn't manually overridden */
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+        applyTheme(e.matches ? 'dark' : 'light');
+    }
+});
 
 /* ---- Scroll Progress Bar (injected) ---- */
 const progressBar = document.createElement('div');
